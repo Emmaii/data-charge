@@ -15,12 +15,12 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
 /* Top Bar */
 .top-bar {
-  padding: 20px 0;
+  padding: 16px 0;
   border-bottom: 1px solid #1e3a5f;
 }
 
@@ -29,18 +29,18 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .logo-img {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 8px;
   object-fit: cover;
   background: #1e3a5f;
@@ -52,28 +52,28 @@ body {
 
 .logo-text .lab {
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #5a8bc9;
 }
 
 .logo-text .room {
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #a0aab5;
 }
 
 .logo-sub {
-  font-size: 0.7rem;
-  letter-spacing: 1px;
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
   color: #7e8c9e;
 }
 
 .telegram-btn {
   background: transparent;
   border: 1px solid #5a7a9a;
-  padding: 8px 20px;
+  padding: 6px 16px;
   border-radius: 40px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: #c0d0e6;
   transition: all 0.2s;
@@ -82,20 +82,19 @@ body {
 
 .telegram-btn:hover {
   background: rgba(90, 122, 154, 0.2);
-  border-color: #a0aab5;
 }
 
 /* Hero */
 .hero {
   text-align: center;
-  padding: 60px 0 40px;
+  padding: 40px 0 30px;
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: 600;
   line-height: 1.2;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .hero .highlight {
@@ -103,22 +102,22 @@ body {
 }
 
 .hero-sub {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #a0b3cc;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .hero-typing {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #c0d0e6;
   border-right: 2px solid #7e9bc9;
   display: inline-block;
-  padding-right: 8px;
+  padding-right: 6px;
   white-space: nowrap;
   overflow: hidden;
   animation: blink 0.8s step-end infinite;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 @keyframes blink {
@@ -128,16 +127,16 @@ body {
 .hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .btn {
-  padding: 12px 28px;
+  padding: 10px 24px;
   border-radius: 40px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.2s;
   text-decoration: none;
@@ -168,13 +167,13 @@ body {
 
 .social-links {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   justify-content: center;
 }
 
 .social-links a {
   color: #7e8c9e;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-decoration: none;
 }
 
@@ -186,13 +185,13 @@ body {
 .trust-banner {
   background: rgba(30, 58, 95, 0.5);
   border-left: 4px solid #7e9bc9;
-  padding: 14px 0;
-  margin: 20px 0;
+  padding: 10px 0;
+  margin: 10px 0;
 }
 
 .trust-banner p {
   color: #eef2f8;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .trust-banner a {
@@ -202,78 +201,79 @@ body {
 
 /* Framework section */
 .framework {
-  padding: 60px 0 40px;
+  padding: 40px 0 30px;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 
 .section-header h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: white;
 }
 
 .section-header p {
   color: #a0b3cc;
-  margin-top: 8px;
+  margin-top: 6px;
+  font-size: 0.9rem;
 }
 
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
 }
 
 .step-card {
   background: rgba(20, 52, 84, 0.5);
   border: 1px solid #2a4a6e;
-  border-radius: 16px;
-  padding: 24px 12px;
+  border-radius: 14px;
+  padding: 16px 8px;
   text-align: center;
   transition: transform 0.2s;
 }
 
 .step-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   border-color: #5a8bc9;
 }
 
 .step-icon {
-  font-size: 2rem;
-  margin-bottom: 12px;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
 }
 
 .step-card h3 {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #c0d0e6;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .step-card p {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #a0b3cc;
 }
 
 /* Counter */
 .counter-section {
   text-align: center;
-  padding: 30px 0;
-  margin: 20px 0;
+  padding: 20px 0;
+  margin: 10px 0;
 }
 
 .counter-container {
   background: rgba(20, 52, 84, 0.4);
-  border-radius: 20px;
-  padding: 24px;
+  border-radius: 16px;
+  padding: 16px;
   border: 1px solid #2a4a6e;
 }
 
 .counter-number {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: #7e9bc9;
   line-height: 1;
@@ -281,108 +281,110 @@ body {
 
 .counter-label {
   color: #a0b3cc;
-  font-size: 0.9rem;
-  margin-top: 8px;
+  font-size: 0.8rem;
+  margin-top: 6px;
 }
 
 /* Book Offer */
 .book-offer {
-  padding: 40px 0;
+  padding: 30px 0;
 }
 
 .book-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 30px;
   align-items: center;
 }
 
 .book-covers {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .book-cover {
-  width: 180px;
-  border-radius: 12px;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   border: 1px solid #2a4a6e;
 }
 
 .book-details h2 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: white;
 }
 
 .book-author {
   color: #a0b3cc;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
 }
 
 .price-wrapper {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .old-price {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #7e8c9e;
   text-decoration: line-through;
 }
 
 .price {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #7e9bc9;
 }
 
 .book-note {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #7e8c9e;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .offer-box {
   background: rgba(30, 58, 95, 0.3);
-  border-left: 4px solid #7e9bc9;
-  padding: 18px 20px;
-  border-radius: 12px;
-  margin: 20px 0;
+  border-left: 3px solid #7e9bc9;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 16px 0;
 }
 
 .offer-box p:first-child {
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: #c0d0e6;
+  font-size: 0.85rem;
 }
 
 .offer-box p:last-child {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #a0b3cc;
 }
 
 .book-actions {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 /* Gift Section */
 .gift {
-  padding: 40px 0 60px;
+  padding: 30px 0 40px;
 }
 
 .lecture-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -393,31 +395,32 @@ body {
   align-items: center;
   background: rgba(20, 52, 84, 0.4);
   border: 1px solid #2a4a6e;
-  border-radius: 14px;
-  padding: 14px 20px;
+  border-radius: 12px;
+  padding: 10px 16px;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 }
 
 .lecture-title {
   font-weight: 500;
+  font-size: 0.85rem;
   color: #eef2f8;
 }
 
 .lecture-meta {
   color: #7e8c9e;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .lecture-actions {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .btn-watch, .btn-assignment {
-  padding: 6px 16px;
+  padding: 4px 12px;
   border-radius: 30px;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
   cursor: pointer;
   font-family: inherit;
@@ -446,20 +449,20 @@ body {
 /* Footer */
 .footer {
   border-top: 1px solid #1e3a5f;
-  padding: 24px 0;
+  padding: 16px 0;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #5a6a7a;
 }
 
 /* Floating Telegram */
 .float-telegram {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 20px;
+  right: 20px;
   background: #0088cc;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -476,15 +479,19 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
   .book-grid {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 20px;
   }
   .book-actions {
     justify-content: center;
   }
   .hero-typing {
-    font-size: 1rem;
+    font-size: 0.9rem;
     white-space: normal;
   }
   .steps-grid {
@@ -492,5 +499,17 @@ body {
   }
   .price-wrapper {
     justify-content: center;
+  }
+  .hero {
+    padding: 30px 0 20px;
+  }
+  .framework {
+    padding: 30px 0 20px;
+  }
+  .book-offer {
+    padding: 20px 0;
+  }
+  .gift {
+    padding: 20px 0 30px;
   }
 }
