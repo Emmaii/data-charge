@@ -42,7 +42,7 @@
         if (entry.isIntersecting && !counterStarted) {
           counterStarted = true;
           let current = 0;
-          const target = 57;
+          const target = 50;
           const step = Math.ceil(target / 50);
           const timer = setInterval(() => {
             current += step;
