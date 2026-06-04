@@ -1,5 +1,4 @@
 (function() {
-  // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Typing animation
@@ -72,7 +71,7 @@
           priceAnimated = true;
           let start = 100000;
           const end = 13000;
-          const duration = 1500; // ms
+          const duration = 1500;
           const stepTime = 20;
           const steps = duration / stepTime;
           const decrement = (start - end) / steps;
@@ -93,35 +92,42 @@
     priceObserver.observe(priceElement);
   }
 
-  // Buy button: copy message, show toast, open Instagram
-  const buyBtn = document.getElementById('buyBookBtn');
-  if (buyBtn) {
-    buyBtn.addEventListener('click', () => {
-      const message = "Hi, I'd like to join the free batch. Please guide me on purchasing the book.";
-      navigator.clipboard.writeText(message).then(() => {
-        const toast = document.createElement('div');
-        toast.textContent = '✓ Message copied. Please paste it in Instagram DM.';
-        toast.style.position = 'fixed';
-        toast.style.bottom = '80px';
-        toast.style.left = '50%';
-        toast.style.transform = 'translateX(-50%)';
-        toast.style.backgroundColor = '#1e3a5f';
-        toast.style.color = '#c0d0e6';
-        toast.style.padding = '10px 20px';
-        toast.style.borderRadius = '40px';
-        toast.style.fontSize = '0.8rem';
-        toast.style.zIndex = '1000';
-        toast.style.border = '1px solid #5a8bc9';
-        toast.style.backdropFilter = 'blur(8px)';
-        toast.style.whiteSpace = 'nowrap';
-        document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 3000);
-      }).catch(() => {
-        alert("Please copy this message:\n\n" + message);
-      });
-      window.open("https://www.instagram.com/emmanuelsilaskelechi?igsh=b282cGxsa3d3Zjgy&utm_source=qr", "_blank");
+  // Generic function to handle Instagram purchase flow
+  function handlePurchase() {
+    const message = "Hi, I'd like to join the free batch. Please guide me on purchasing the book.";
+    navigator.clipboard.writeText(message).then(() => {
+      const toast = document.createElement('div');
+      toast.textContent = '✓ Message copied. Please paste it in Instagram DM.';
+      toast.style.position = 'fixed';
+      toast.style.bottom = '80px';
+      toast.style.left = '50%';
+      toast.style.transform = 'translateX(-50%)';
+      toast.style.backgroundColor = '#1e3a5f';
+      toast.style.color = '#c0d0e6';
+      toast.style.padding = '8px 16px';
+      toast.style.borderRadius = '40px';
+      toast.style.fontSize = '0.75rem';
+      toast.style.zIndex = '1000';
+      toast.style.border = '1px solid #5a8bc9';
+      toast.style.backdropFilter = 'blur(8px)';
+      toast.style.whiteSpace = 'nowrap';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }).catch(() => {
+      alert("Please copy this message:\n\n" + message);
     });
+    window.open("https://www.instagram.com/emmanuelsilaskelechi?igsh=b282cGxsa3d3Zjgy&utm_source=qr", "_blank");
   }
+
+  // Buy button
+  const buyBtn = document.getElementById('buyBookBtn');
+  if (buyBtn) buyBtn.addEventListener('click', handlePurchase);
+
+  // Enroll buttons (both hero and book section)
+  const enrollBtn1 = document.getElementById('enrollBtn');
+  const enrollBtn2 = document.getElementById('enrollBtn2');
+  if (enrollBtn1) enrollBtn1.addEventListener('click', handlePurchase);
+  if (enrollBtn2) enrollBtn2.addEventListener('click', handlePurchase);
 
   // Lectures data
   const lectures = [
