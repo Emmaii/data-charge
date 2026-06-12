@@ -1,85 +1,92 @@
-// Set current year in footer
+// Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Sample data with PDF links (using raw GitHub URLs)
+// Sample data — matches your 5 PDFs exactly
 const samples = [
   {
-    title: "Why Financial Literacy Matters More Than Ever in 2026",
-    excerpt: "Let me ask you something. When was the last time you felt completely confident about a financial decision—without second-guessing yourself afterward?",
-    pdfUrl: "https://raw.githubusercontent.com/Emmaii/Portfolio/main/assets/Why%20Financial%20Literacy%20Matters%20More%20Than%20Ever%20in%202026.pdf"
-  },
-  {
-    title: "The Silent Wealth Builder: Why Compound Interest Is the Most Powerful Force in Personal Finance",
-    excerpt: "Let me tell you about two people. Neither is a genius. Neither got lucky. Meet Maya. She's 22, just landed her first full-time job...",
-    pdfUrl: "https://raw.githubusercontent.com/Emmaii/Portfolio/main/assets/The_Silent_Wealth_Builder_Why_Compound_Interest_Is_the_Most_Powerful.pdf"
-  },
-  {
     title: "How ETFs Changed Investing Forever",
-    excerpt: "Here's a confession: I used to think investing was for other people. You know the type. Spreadsheets. Wall Street jargon...",
+    category: "Finance / Explainer",
+    excerpt: "Here's a confession: I used to think investing was for other people. Spreadsheets. Wall Street jargon. Enough money to buy a small house before you could even get started.",
     pdfUrl: "https://raw.githubusercontent.com/Emmaii/Portfolio/main/assets/How%20ETFs%20Changed%20Investing%20Forever.pdf"
+  },
+  {
+    title: "ReplyFlow — Speed-to-Lead Activation Sequence",
+    category: "Email Marketing / Nurture",
+    excerpt: "Goal: Convert free trial users into paying customers by demonstrating value fast. Short. Sharp. No fluff.",
+    pdfUrl: "https://raw.githubusercontent.com/Emmaii/Portfolio/main/assets/ReplyFlow%20--%20Speed-to-Lead%20Activation%20Sequence.pdf"
+  },
+  {
+    title: "Stop Losing Leads Because You Respond Too Late",
+    category: "Lead Conversion / Sales Copy",
+    excerpt: "You don't have a traffic problem. You have a timing problem. Studies show respond within 5 minutes and you convert dramatically better.",
+    pdfUrl: "https://raw.githubusercontent.com/Emmaii/Portfolio/main/assets/Stop%20Losing%20Leads%20Because%20You%20Respond%20Too%20Late.pdf"
+  },
+  {
+    title: "Velvra Cocoa Milk Shake — Website Content",
+    category: "Product / Brand Storytelling",
+    excerpt: "Rich chocolate. Cold finish. No drama. Velvra is a slow-melt chocolate shake for moments when you want something rich, cold, and deeply satisfying.",
+    pdfUrl: "https://raw.githubusercontent.com/Emmaii/Portfolio/main/assets/Website%20content%20--%20Velvra%20Cocoa%20Milk%20Shake.pdf"
+  },
+  {
+    title: "Why Compound Interest Is the Most Powerful Force in Personal Finance",
+    category: "Finance / Educational",
+    excerpt: "Let me tell you about two people. Neither is a genius. Neither got lucky. Meet Maya. She's 22... and she wins by over $350,000.",
+    pdfUrl: "https://raw.githubusercontent.com/Emmaii/Portfolio/main/assets/Why%20Compound%20Interest%20Is%20the%20Most%20Powerful%20Force%20in%20Personal%20Finance.pdf"
   }
 ];
 
 // Generate sample cards
 const grid = document.getElementById('samplesGrid');
 if (grid) {
-  samples.forEach((sample) => {
+  samples.forEach((sample, idx) => {
     const card = document.createElement('div');
     card.className = 'sample-card';
     card.innerHTML = `
       <h3>${sample.title}</h3>
-      <div class="sample-meta">Sample • Finance writing</div>
-      <p>${sample.excerpt.substring(0, 140)}…</p>
-      <button class="read-btn" data-url="${sample.pdfUrl}">Read full sample →</button>
+      <div class="sample-meta">${sample.category}</div>
+      <p>${sample.excerpt.substring(0, 120)}${sample.excerpt.length > 120 ? '…' : ''}</p>
+      <button class="read-btn" data-idx="${idx}">Read full sample →</button>
     `;
     grid.appendChild(card);
   });
 
-  // Attach event listeners to buttons
+  // Modal logic
+  const modal = document.getElementById('modal');
+  const modalBody = document.getElementById('modal-body');
+  const closeModal = document.querySelector('.modal-close');
+
+  function openModal(pdfUrl, title) {
+    modalBody.innerHTML = `
+      <div style="text-align: center; padding: 20px;">
+        <p style="margin-bottom: 20px;">Loading PDF: <strong>${title}</strong></p>
+        <iframe src="${pdfUrl}" style="width: 100%; height: 70vh; border: none; border-radius: 12px;"></iframe>
+        <p style="margin-top: 16px; font-size: 0.8rem; color: #5f6e7a;">If the PDF doesn't load, <a href="${pdfUrl}" target="_blank">click here to open it directly</a>.</p>
+      </div>
+    `;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModalFunc() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+    modalBody.innerHTML = '';
+  }
+
+  closeModal.addEventListener('click', closeModalFunc);
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) closeModalFunc();
+  });
+
   document.querySelectorAll('.read-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const pdfUrl = btn.getAttribute('data-url');
-      if (pdfUrl) {
-        window.open(pdfUrl, '_blank');
+      const idx = btn.getAttribute('data-idx');
+      if (idx !== null && samples[idx]) {
+        openModal(samples[idx].pdfUrl, samples[idx].title);
       }
     });
   });
 }
-
-// Typing Animation (black & white version)
-const words = ["fintechs write better briefs", "brokerages build trust", "publishers turn complexity into clarity"];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typingTextElement = document.getElementById('typing-text');
-const cursorElement = document.querySelector('.typing-cursor');
-
-function typeEffect() {
-  const currentWord = words[wordIndex];
-  let displayText = currentWord.substring(0, charIndex);
-  typingTextElement.textContent = displayText;
-
-  if (!isDeleting && charIndex < currentWord.length) {
-    charIndex++;
-    setTimeout(typeEffect, 100);
-  } else if (isDeleting && charIndex > 0) {
-    charIndex--;
-    setTimeout(typeEffect, 50);
-  } else if (!isDeleting && charIndex === currentWord.length) {
-    isDeleting = true;
-    setTimeout(typeEffect, 2000);
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    wordIndex = (wordIndex + 1) % words.length;
-    setTimeout(typeEffect, 300);
-  }
-}
-
-// Start typing animation after page loads
-window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(typeEffect, 500);
-});
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
