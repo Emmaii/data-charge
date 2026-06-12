@@ -1,7 +1,7 @@
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Sample data — matches your 5 PDFs exactly
+// Sample data — 5 PDFs (exactly as provided)
 const samples = [
   {
     title: "How ETFs Changed Investing Forever",
@@ -57,10 +57,12 @@ if (grid) {
 
   function openModal(pdfUrl, title) {
     modalBody.innerHTML = `
-      <div style="text-align: center; padding: 20px;">
-        <p style="margin-bottom: 20px;">Loading PDF: <strong>${title}</strong></p>
-        <iframe src="${pdfUrl}" style="width: 100%; height: 70vh; border: none; border-radius: 12px;"></iframe>
-        <p style="margin-top: 16px; font-size: 0.8rem; color: #5f6e7a;">If the PDF doesn't load, <a href="${pdfUrl}" target="_blank">click here to open it directly</a>.</p>
+      <div style="text-align: center; padding: 10px;">
+        <p style="margin-bottom: 16px; color: #cccccc;"><strong>${title}</strong></p>
+        <iframe src="${pdfUrl}" title="${title}"></iframe>
+        <p style="margin-top: 16px; font-size: 0.75rem; color: #888;">
+          If the PDF doesn't load, <a href="${pdfUrl}" target="_blank" style="color: #ffffff;">open it directly</a>.
+        </p>
       </div>
     `;
     modal.style.display = 'block';
@@ -87,6 +89,39 @@ if (grid) {
     });
   });
 }
+
+// Typing Animation (black & white version)
+const words = ["fintechs write better briefs", "brokerages build trust", "publishers turn complexity into clarity"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingTextElement = document.getElementById('typing-text');
+
+function typeEffect() {
+  const currentWord = words[wordIndex];
+  let displayText = currentWord.substring(0, charIndex);
+  typingTextElement.textContent = displayText;
+
+  if (!isDeleting && charIndex < currentWord.length) {
+    charIndex++;
+    setTimeout(typeEffect, 100);
+  } else if (isDeleting && charIndex > 0) {
+    charIndex--;
+    setTimeout(typeEffect, 50);
+  } else if (!isDeleting && charIndex === currentWord.length) {
+    isDeleting = true;
+    setTimeout(typeEffect, 2000);
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    setTimeout(typeEffect, 300);
+  }
+}
+
+// Start typing animation after page loads
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(typeEffect, 500);
+});
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
