@@ -1,7 +1,7 @@
 // Set current year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Sample data with PDF links
+// Sample data with PDF links (using raw GitHub URLs)
 const samples = [
   {
     title: "Why Financial Literacy Matters More Than Ever in 2026",
@@ -23,7 +23,7 @@ const samples = [
 // Generate sample cards
 const grid = document.getElementById('samplesGrid');
 if (grid) {
-  samples.forEach((sample, idx) => {
+  samples.forEach((sample) => {
     const card = document.createElement('div');
     card.className = 'sample-card';
     card.innerHTML = `
@@ -35,7 +35,7 @@ if (grid) {
     grid.appendChild(card);
   });
 
-  // Attach event listeners to buttons after they're created
+  // Attach event listeners to buttons
   document.querySelectorAll('.read-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -47,7 +47,7 @@ if (grid) {
   });
 }
 
-// Typing Animation
+// Typing Animation (black & white version)
 const words = ["fintechs write better briefs", "brokerages build trust", "publishers turn complexity into clarity"];
 let wordIndex = 0;
 let charIndex = 0;
@@ -61,19 +61,15 @@ function typeEffect() {
   typingTextElement.textContent = displayText;
 
   if (!isDeleting && charIndex < currentWord.length) {
-    // Typing
     charIndex++;
     setTimeout(typeEffect, 100);
   } else if (isDeleting && charIndex > 0) {
-    // Deleting
     charIndex--;
     setTimeout(typeEffect, 50);
   } else if (!isDeleting && charIndex === currentWord.length) {
-    // Word complete, pause before deleting
     isDeleting = true;
     setTimeout(typeEffect, 2000);
   } else if (isDeleting && charIndex === 0) {
-    // Deletion complete, move to next word
     isDeleting = false;
     wordIndex = (wordIndex + 1) % words.length;
     setTimeout(typeEffect, 300);
