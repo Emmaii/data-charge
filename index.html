@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emmanuel Silas Kelechi | Finance Writer</title>
-  <meta name="description" content="Finance writer specialising in institutional mindset, macro analysis, and wealth-building content. Portfolio & book.">
+  <meta name="description" content="Finance writer specializing in institutional mindset, macro analysis, and wealth-building content. Portfolio & book.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- Hero Section with Typing Animation -->
     <section class="hero">
       <div class="container hero-container">
         <h1>
@@ -35,6 +35,11 @@
           <span class="hero-line-accent">technically precise</span>
           <span class="hero-line">finance writing.</span>
         </h1>
+        <div class="typing-wrapper">
+          <span class="typing-prefix">I help </span>
+          <span id="typing-text" class="typing-text"></span>
+          <span class="typing-cursor">|</span>
+        </div>
         <p class="hero-description">
           I help fintechs, brokerages, and financial publishers turn complex topics into 
           narratives that build trust and drive action. Remote, deadline‑driven, and process‑oriented.
@@ -51,12 +56,12 @@
       </div>
     </section>
 
-    <!-- Writing Samples -->
+    <!-- Writing Samples with PDF Integration -->
     <section id="samples" class="section samples">
       <div class="container">
         <div class="section-header">
           <h2>Writing samples</h2>
-          <p>Click any card — read the full piece. No paywalls, no fluff.</p>
+          <p>Click any card to read the full article (PDF). No paywalls, no fluff.</p>
         </div>
         <div class="samples-grid" id="samplesGrid">
           <!-- Cards will be populated by JS -->
@@ -88,10 +93,10 @@
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="section contact">
       <div class="container contact-container">
-        <h2>Let’s work together</h2>
+        <h2>Let's work together</h2>
         <p>Remote finance writing roles · Freelance or full‑time · Samples available on request</p>
         <div class="contact-links">
           <a href="https://www.instagram.com/emmanuelsilaskelechi" target="_blank" class="contact-item">Instagram</a>
@@ -99,7 +104,6 @@
           <a href="https://x.com/labroom_" target="_blank" class="contact-item">X (Twitter)</a>
           <a href="mailto:emmanuel@example.com" class="contact-item">Email</a>
         </div>
-        <p class="contact-note">Prefer Telegram? <a href="https://t.me/LabR00m" target="_blank">Message here</a></p>
       </div>
     </section>
   </main>
@@ -110,14 +114,6 @@
       <p class="footer-small">All writing is for educational purposes. Past samples show style, not financial advice.</p>
     </div>
   </footer>
-
-  <!-- Modal for reading samples -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <div id="modal-body"></div>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
