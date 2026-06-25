@@ -1,123 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emmanuel Silas | Content Writer</title>
-  <meta name="description" content="Email sequences, lead conversion, financial explainers, product storytelling. Remote content writer.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATAPLUG Enterprise | Premium Data Architecture</title>
+    <meta name="description" content="Enterprise data architecture optimized for scale. Bulk bandwidth allocation across MTN, Airtel, Glo, and 9mobile.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#080F1F',
+                            slate: '#111B33',
+                            navy: '#1A2A4A',
+                            accent: '#00D4FF',
+                            emerald: '#00F5A0',
+                            light: '#F0F4FF',
+                            gray: '#8899BB'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'slide-up-delay': 'slideUp 0.8s ease-out 0.2s forwards',
+                        'slide-up-delay-2': 'slideUp 0.8s ease-out 0.4s forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        glow: {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.5 }
+                        },
+                        slideUp: {
+                            '0%': { opacity: 0, transform: 'translateY(30px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="header">
-    <div class="container header-container">
-      <div class="logo">
-        <span class="logo-name">Emmanuel Silas</span>
-        <span class="logo-tag">Content Writer · Email · Lead Conversion · Finance · Product</span>
-      </div>
-      <nav class="nav">
-        <a href="#samples">Samples</a>
-        <a href="#book">Book</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+<!-- ===== NAVIGATION ===== -->
+<header class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 h-16 lg:h-20 flex items-center justify-between">
+        <a href="#" class="flex items-center space-x-3 group">
+            <div class="w-8 h-8 lg:w-10 lg:h-10 rounded-xl bg-gradient-to-br from-brand-accent to-brand-emerald flex items-center justify-center shadow-lg shadow-brand-accent/20">
+                <span class="text-brand-dark font-black text-sm lg:text-base">⚡</span>
+            </div>
+            <div>
+                <span class="text-white font-bold text-lg lg:text-xl tracking-tight">DATAPLUG<span class="text-brand-accent">.</span></span>
+                <span class="hidden lg:inline-block text-[10px] uppercase tracking-[0.15em] text-brand-gray ml-1 font-medium">Enterprise</span>
+            </div>
+        </a>
 
-  <main>
-    <!-- Hero Section with Typing Animation -->
-    <section class="hero">
-      <div class="container hero-container">
-        <h1>
-          <span class="hero-line">Words that convert.</span>
-          <span class="hero-line-accent">Email · Lead gen · Finance · Product.</span>
+        <nav class="hidden lg:flex items-center space-x-10 text-sm">
+            <a href="#infrastructure" class="text-brand-gray hover:text-white transition-colors font-medium">Infrastructure</a>
+            <a href="#pricing" class="text-brand-gray hover:text-white transition-colors font-medium">Data Portals</a>
+            <a href="#compliance" class="text-brand-gray hover:text-white transition-colors font-medium">Compliance</a>
+        </nav>
+
+        <div class="flex items-center space-x-3">
+            <a href="https://wa.me/2348000000000?text=Hello%20DataPlug%20Enterprise.%20I%20would%20like%20to%20make%20a%20general%20inquiry%20about%20your%20high-volume%20data%20channels." target="_blank" class="hidden sm:inline-flex items-center justify-center bg-brand-accent/10 text-brand-accent text-xs font-semibold px-4 py-2 rounded-lg hover:bg-brand-accent/20 transition-all border border-brand-accent/20">
+                <span class="mr-2">●</span> Direct Portal
+            </a>
+            <button id="mobileMenuBtn" class="lg:hidden text-brand-gray hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden hidden border-t border-white/5 bg-brand-dark/95 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-4 py-4 space-y-3">
+            <a href="#infrastructure" class="block text-brand-gray hover:text-white transition-colors py-2 text-sm font-medium">Infrastructure</a>
+            <a href="#pricing" class="block text-brand-gray hover:text-white transition-colors py-2 text-sm font-medium">Data Portals</a>
+            <a href="#compliance" class="block text-brand-gray hover:text-white transition-colors py-2 text-sm font-medium">Compliance</a>
+            <a href="https://wa.me/2348000000000?text=Hello%20DataPlug%20Enterprise.%20I%20would%20like%20to%20make%20a%20general%20inquiry%20about%20your%20high-volume%20data%20channels." target="_blank" class="block text-center bg-brand-accent/10 text-brand-accent text-sm font-semibold px-4 py-3 rounded-lg border border-brand-accent/20">Direct Portal</a>
+        </div>
+    </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero-gradient min-h-screen flex items-center relative overflow-hidden pt-20 lg:pt-24">
+    <div class="absolute inset-0 grid-pattern opacity-20"></div>
+    <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-accent/5 rounded-full blur-3xl animate-pulse-slow"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-brand-emerald/5 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+
+    <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+        <div class="inline-flex items-center space-x-3 bg-brand-accent/10 border border-brand-accent/20 rounded-full px-4 py-1.5 mb-8 badge-glow animate-slide-up">
+            <span class="w-2 h-2 rounded-full bg-brand-emerald pulse-ring"></span>
+            <span class="text-xs font-medium text-brand-emerald tracking-wider">ALL ALLOCATION CHANNELS OPERATIONAL</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 animate-slide-up">
+            <span class="text-white">Enterprise Data</span><br>
+            <span class="bg-gradient-to-r from-brand-accent via-white to-brand-emerald bg-clip-text text-transparent">Architecture. Optimized.</span>
         </h1>
-        <div class="typing-wrapper">
-          <span class="typing-prefix">I help </span>
-          <span id="typing-text" class="typing-text"></span>
-          <span class="typing-cursor">|</span>
-        </div>
-        <p class="hero-description">
-          I'll help you write content that works — email sequences that nurture, lead copy that converts,
-          financial explainers that build trust, and product storytelling that sells.
+
+        <p class="text-base lg:text-lg text-brand-gray max-w-2xl mx-auto leading-relaxed font-light mb-10 animate-slide-up-delay">
+            Bypass standard consumer retail limitations. We route dedicated direct corporate gifting and SME data pipelines across major Nigerian telecommunication networks—delivering secure, high-speed connectivity to enterprises, remote workers, and power users.
         </p>
-        <div class="hero-stats">
-          <span>✍️ Email & lead gen</span>
-          <span>📊 Finance & explainers</span>
-          <span>📦 Product & brand voice</span>
-          <span>🌍 Remote ready</span>
-        </div>
-        <div class="hero-cta">
-          <a href="#samples" class="btn btn-primary">View samples →</a>
-          <a href="#contact" class="btn btn-secondary">Hire me</a>
-        </div>
-      </div>
-    </section>
 
-    <!-- Writing Samples (5 cards) -->
-    <section id="samples" class="section samples">
-      <div class="container">
-        <div class="section-header">
-          <h2>Writing samples</h2>
-          <p>Email sequences · Lead conversion · Finance deep‑dives · Product copy</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up-delay-2">
+            <a href="#pricing" class="w-full sm:w-auto group bg-gradient-to-r from-brand-accent to-brand-emerald text-brand-dark font-semibold px-8 py-3.5 rounded-xl hover:shadow-2xl hover:shadow-brand-accent/20 transition-all duration-300 flex items-center justify-center gap-2">
+                <span>Explore Data Portals</span>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+            <a href="https://wa.me/2348000000000?text=Hello%20DataPlug%20Enterprise.%20I%20would%20like%20to%20consult%20with%20an%20agent%20regarding%20bulk%20bandwidth%20procurement." target="_blank" class="w-full sm:w-auto glass text-white font-medium px-8 py-3.5 rounded-xl hover:bg-white/5 transition-all duration-300 border border-white/10 flex items-center justify-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Consult with an Agent
+            </a>
         </div>
-        <div class="samples-grid" id="samplesGrid"></div>
-      </div>
-    </section>
-
-    <!-- Book Section -->
-    <section id="book" class="section book">
-      <div class="container book-container">
-        <div class="book-cover">
-          <img src="assets/book-front.jpg" alt="Book front cover" class="book-img">
-          <img src="assets/book-back.jpg" alt="Book back cover" class="book-img">
-        </div>
-        <div class="book-info">
-          <h2>The Institutional Trading Framework</h2>
-          <p class="book-sub">Core knowledge system — macro, execution, risk, psychology.</p>
-          <p class="book-description">
-            A structured methodology for understanding markets without noise.
-            Written for those who value process over predictions.
-          </p>
-          <div class="book-meta">
-            <span>📘 40+ pages</span>
-            <span>🎯 Practical frameworks</span>
-            <span>📊 Real examples</span>
-          </div>
-          <a href="#contact" class="btn btn-outline">Inquire about the book →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section (only email) -->
-    <section id="contact" class="section contact">
-      <div class="container contact-container">
-        <h2>Let’s work together</h2>
-        <p>Remote content roles · Freelance or full‑time · Samples available on request</p>
-        <div class="contact-links">
-          <a href="mailto:emmaabusinesss@gmail.com" class="contact-item">Email →</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© <span id="year"></span> Emmanuel Silas  — Content writer. Email, lead conversion, finance, product.</p>
-      <p class="footer-small">All samples are representative of client work and personal projects.</p>
     </div>
-  </footer>
+</section>
 
-  <!-- Modal for PDF viewing -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <div id="modal-body"></div>
+<!-- ===== INFRASTRUCTURE ===== -->
+<section id="infrastructure" class="py-24 px-4 border-y border-white/5 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-accent/5 to-transparent opacity-20"></div>
+
+    <div class="max-w-5xl mx-auto relative z-10">
+        <div class="text-center max-w-xl mx-auto mb-16">
+            <span class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold">Technical Matrix</span>
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mt-3 mb-4">Engineered for absolute direct-to-device delivery</h2>
+            <p class="text-brand-gray text-sm font-light">Three pillars of our enterprise-grade data architecture</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-card rounded-2xl p-8 text-center">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-accent/20 to-brand-accent/5 flex items-center justify-center mx-auto mb-5 border border-brand-accent/10">
+                    <span class="text-2xl">📡</span>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">Bulk Bandwidth Allocation</h3>
+                <p class="text-brand-gray text-sm leading-relaxed font-light">We leverage dedicated business high-volume data pools structurally discounted at an enterprise infrastructure scale. No personal airtime conversion loops.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-8 text-center" style="animation-delay: 0.15s;">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-emerald/20 to-brand-emerald/5 flex items-center justify-center mx-auto mb-5 border border-brand-emerald/10">
+                    <span class="text-2xl">🔒</span>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">Synchronous Verification</h3>
+                <p class="text-brand-gray text-sm leading-relaxed font-light">Secure, encrypted transaction routing that logs transactions directly to terminal endpoints, achieving full validation inside 5–15 seconds.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-8 text-center" style="animation-delay: 0.3s;">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center mx-auto mb-5 border border-white/10">
+                    <span class="text-2xl">🔁</span>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">Network Redundancy</h3>
+                <p class="text-brand-gray text-sm leading-relaxed font-light">Automated failover links across major tier-1 telecom carriers ensure that if one internal wholesale path experiences latency, data routes instantly via secondary bridges.</p>
+            </div>
+        </div>
     </div>
-  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- ===== STATS BANNER ===== -->
+<section class="py-12 px-4 border-y border-white/5 bg-brand-dark/30">
+    <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="stat-number">4</div>
+                <div class="text-brand-gray text-xs font-medium uppercase tracking-wider mt-1">Network Carriers</div>
+            </div>
+            <div>
+                <div class="stat-number">5-15s</div>
+                <div class="text-brand-gray text-xs font-medium uppercase tracking-wider mt-1">Verification Time</div>
+            </div>
+            <div>
+                <div class="stat-number">99.99%</div>
+                <div class="text-brand-gray text-xs font-medium uppercase tracking-wider mt-1">Uptime Guarantee</div>
+            </div>
+            <div>
+                <div class="stat-number">2.3M+</div>
+                <div class="text-brand-gray text-xs font-medium uppercase tracking-wider mt-1">Data Routed Daily</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing" class="py-24 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-accent/5 via-transparent to-brand-emerald/5"></div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold">Active Data Portals</span>
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mt-3 mb-4">Straight to the point options.</h2>
+            <p class="text-brand-gray text-sm font-light">No clutter. Select your pipeline below to securely route data to your device via our automated WhatsApp fulfillment network.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <!-- MTN 1GB -->
+            <div class="glass-card rounded-2xl p-8 plan-card relative">
+                <div class="absolute top-0 right-0 bg-gradient-to-br from-[#FFCC00] to-[#FFB300] text-brand-dark font-extrabold text-[9px] px-4 py-1.5 uppercase tracking-wider rounded-tr-2xl rounded-bl-xl">MTN</div>
+                <div class="mt-4">
+                    <div class="text-xs text-brand-gray uppercase tracking-wider font-medium">Micro Plan</div>
+                    <div class="text-4xl font-bold text-white mt-2">1 <span class="text-lg font-medium text-brand-gray">GB</span></div>
+                    <div class="text-xs text-brand-emerald font-medium mt-1">Valid for 24 Hours</div>
+                    <p class="text-brand-gray text-sm leading-relaxed font-light mt-4">High-priority high-speed terminal allocation. Perfect for daily standalone workloads and rapid downloads.</p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-white/5">
+                    <div class="flex items-baseline space-x-2">
+                        <span class="text-2xl font-bold text-white">₦350</span>
+                        <span class="text-sm text-brand-gray line-through">₦500 Retail</span>
+                    </div>
+                    <a href="https://wa.me/2348000000000?text=Hello%20DataPlug%20Enterprise.%20I%20wish%20to%20initialize%20the%20MTN%201GB%20Daily%20Data%20Bundle%20for%20%E2%82%A6350.%20Please%20provide%20routing%20details." target="_blank" class="block w-full text-center bg-brand-accent/10 text-brand-accent font-semibold py-3 rounded-xl hover:bg-brand-accent/20 transition-all border border-brand-accent/20 mt-4">
+                        Initialize Allocation →
+                    </a>
+                </div>
+            </div>
+
+            <!-- MTN 5GB - Featured -->
+            <div class="glass-card rounded-2xl p-8 plan-card plan-card-highlight relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-accent to-brand-emerald text-brand-dark font-extrabold text-[10px] px-4 py-1 rounded-full uppercase tracking-wider shadow-lg shadow-brand-accent/20">Most Requested</div>
+                <div class="absolute top-0 right-0 bg-gradient-to-br from-[#FFCC00] to-[#FFB300] text-brand-dark font-extrabold text-[9px] px-4 py-1.5 uppercase tracking-wider rounded-tr-2xl rounded-bl-xl">MTN</div>
+                <div class="mt-4">
+                    <div class="text-xs text-brand-accent uppercase tracking-wider font-medium">Performance Plan</div>
+                    <div class="text-4xl font-bold text-white mt-2">5 <span class="text-lg font-medium text-brand-gray">GB</span></div>
+                    <div class="text-xs text-brand-emerald font-medium mt-1">Valid for 2 Days</div>
+                    <p class="text-brand-gray text-sm leading-relaxed font-light mt-4">High-capacity multi-day bandwidth link. Architected for remote professionals and heavy media streaming.</p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-white/5">
+                    <div class="flex items-baseline space-x-2">
+                        <span class="text-2xl font-bold text-white">₦1,800</span>
+                        <span class="text-sm text-brand-gray line-through">₦2,500 Retail</span>
+                    </div>
+                    <a href="https://wa.me/2348000000000?text=Hello%20DataPlug%20Enterprise.%20I%20wish%20to%20initialize%20the%20MTN%205GB%20Multi-Day%20Data%20Bundle%20for%20%E2%82%A61,800.%20Please%20provide%20routing%20details." target="_blank" class="block w-full text-center bg-gradient-to-r from-brand-accent to-brand-emerald text-brand-dark font-semibold py-3 rounded-xl hover:shadow-2xl hover:shadow-brand-accent/20 transition-all mt-4">
+                        Initialize Allocation →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Airtel 10GB -->
+            <div class="glass-card rounded-2xl p-8 plan-card relative">
+                <div class="absolute top-0 right-0 bg-gradient-to-br from-[#E3001B] to-[#CC0015] text-white font-extrabold text-[9px] px-4 py-1.5 uppercase tracking-wider rounded-tr-2xl rounded-bl-xl">Airtel</div>
+                <div class="mt-4">
+                    <div class="text-xs text-brand-gray uppercase tracking-wider font-medium">Enterprise Plan</div>
+                    <div class="text-4xl font-bold text-white mt-2">10 <span class="text-lg font-medium text-brand-gray">GB</span></div>
+                    <div class="text-xs text-brand-emerald font-medium mt-1">Valid for 30 Days</div>
+                    <p class="text-brand-gray text-sm leading-relaxed font-light mt-4">Sustainable macro monthly allocation. Fully provisioned for prolonged smartphone lifecycle management.</p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-white/5">
+                    <div class="flex items-baseline space-x-2">
+                        <span class="text-2xl font-bold text-white">₦3,850</span>
+                        <span class="text-sm text-brand-gray line-through">₦5,000 Retail</span>
+                    </div>
+                    <a href="https://wa.me/2348000000000?text=Hello%20DataPlug%20Enterprise.%20I%20wish%20to%20initialize%20the%20Airtel%2010GB%20Monthly%20Data%20Bundle%20for%20%E2%82%A63,850.%20Please%20provide%20routing%20details." target="_blank" class="block w-full text-center bg-brand-accent/10 text-brand-accent font-semibold py-3 rounded-xl hover:bg-brand-accent/20 transition-all border border-brand-accent/20 mt-4">
+                        Initialize Allocation →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== COMPLIANCE / FOOTER ===== -->
+<footer id="compliance" class="bg-brand-dark border-t border-white/5 pt-16 pb-8 px-4">
+    <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pb-10 border-b border-white/5">
+            <div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-brand-accent to-brand-emerald flex items-center justify-center">
+                        <span class="text-brand-dark font-black text-sm">⚡</span>
+                    </div>
+                    <span class="text-white font-bold text-lg">DATAPLUG<span class="text-brand-accent">.</span></span>
+                    <span class="text-[10px] uppercase tracking-[0.15em] text-brand-gray font-medium">Enterprise</span>
+                </div>
+                <p class="text-brand-gray text-sm leading-relaxed font-light max-w-sm">
+                    Providing high-performance direct-channel network asset routing services across Nigeria. Designed strictly for speed, discretion, and optimal enterprise data value distribution.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-xs font-semibold tracking-wider uppercase text-brand-accent mb-3">Legal Routing Architecture</h4>
+                <p class="text-brand-gray text-sm leading-relaxed font-light">
+                    We operate completely independently as a high-volume business data aggregator and automated bandwidth distribution system. We maintain no official direct retail affiliation with corporate board entities. All licensed network marks, logos, names, and trade symbols remain properties of their respective registered network owners.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:justify-between items-center gap-4 pt-8">
+            <div class="text-brand-gray text-xs font-light">
+                &copy; <span id="year"></span> DATAPLUG Enterprise. All Rights Reserved. Data Pipeline Secure.
+            </div>
+            <div class="flex items-center space-x-4 text-xs">
+                <span class="flex items-center text-brand-emerald">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald pulse-ring mr-1.5"></span>
+                    Secure SSL Encryption Active
+                </span>
+                <span class="text-brand-gray">● Tier-1 Routing Infrastructure</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
