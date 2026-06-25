@@ -314,16 +314,6 @@ body {
   box-shadow: 0 0 40px -12px rgba(16, 185, 129, 0.08);
 }
 
-.card-best-seller {
-  border-color: #10b981;
-}
-
-.card-best-seller:hover {
-  box-shadow: 0 8px 40px -8px rgba(16, 185, 129, 0.15);
-  border-color: #10b981;
-  transform: translateY(-3px);
-}
-
 .card-badge-top {
   position: absolute;
   top: -10px;
