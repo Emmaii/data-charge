@@ -336,6 +336,20 @@ body {
 
 .card-highlight {
   border: 2px solid #00B4D8;
+  background: #141C2C;
+  box-shadow: 0 0 40px -12px rgba(0, 180, 216, 0.08);
+}
+
+/* Best Seller specific styling */
+.card-best-seller {
+  border-color: #00B4D8;
+  background: linear-gradient(135deg, #141C2C 0%, #0F1A2A 100%);
+}
+
+.card-best-seller:hover {
+  box-shadow: 0 8px 40px -8px rgba(0, 180, 216, 0.15);
+  border-color: #00B4D8;
+  transform: translateY(-3px);
 }
 
 .card-badge-top {
@@ -349,8 +363,9 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 0.125rem 0.875rem;
+  padding: 0.25rem 1rem;
   border-radius: 9999px;
+  white-space: nowrap;
 }
 
 .card-top {
