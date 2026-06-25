@@ -4,135 +4,163 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Charge · Smart Data</title>
-  <meta name="description" content="Smart data at wholesale prices. MTN and Airtel bundles delivered instantly via WhatsApp." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#0B0F19',
+            darkgray: '#1A1F2B',
+            electric: '#00B4D8',
+            offwhite: '#E2E8F0',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0B0F19;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+  </style>
 </head>
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header class="header">
-    <div class="container header-inner">
-      <img src="assets/data charge logo.jpg" alt="Data Charge Logo" class="logo-img" />
-      <div class="status">
-        <span class="status-dot"></span>
-        <span class="status-text">Live Channel</span>
+  <header class="sticky top-0 z-50 border-b border-[#2A2A2A] bg-brand/80 backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <!-- Logo Placeholder -->
+      <div class="w-40 h-10 bg-darkgray rounded border border-[#2A2A2A] flex items-center justify-center">
+        <span class="text-offwhite text-xs font-semibold tracking-wider">DATA CHARGE</span>
+      </div>
+      <!-- Status -->
+      <div class="flex items-center space-x-2">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-electric"></span>
+        </span>
+        <span class="text-xs font-medium text-gray-400 tracking-wide">Active Pipeline</span>
       </div>
     </div>
   </header>
 
   <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <h1 class="hero-title">
-        Smart data.<br />
-        No premium prices.
-      </h1>
-      <p class="hero-sub">
-        Bypass regular network retail costs. We route direct corporate gifting and SME data pools to give you the exact same network quality, for less.
-      </p>
-      <div class="hero-actions">
-        <a href="#data-cards" class="btn btn-primary">
-          Get Data Now
-          <svg class="btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-        </a>
-        <a href="https://wa.me/2347031763615?text=Hello%20Data%20Charge%2C%20I%20have%20a%20general%20inquiry.%20Please%20assist." target="_blank" class="btn btn-outline">
-          Talk to Us
-        </a>
-      </div>
+  <section class="max-w-6xl mx-auto px-4 pt-20 pb-12 md:pt-32 md:pb-20 text-center">
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-offwhite leading-[1.1]">
+      Smart data.<br />
+      <span class="text-electric">No premium prices.</span>
+    </h1>
+    <p class="mt-4 text-base md:text-lg text-gray-400 max-w-xl mx-auto font-light leading-relaxed">
+      Bypass regular network retail costs. We route direct corporate gifting and SME data pools to give you the exact same network quality, for less.
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#data-cards" class="bg-electric text-brand font-semibold px-6 py-3 rounded-full text-sm hover:bg-opacity-80 transition-all">
+        Get Data Now
+      </a>
+      <a href="https://wa.me/2347031763615?text=Hello%20Data%20Charge%2C%20I%20have%20a%20general%20inquiry.%20Please%20assist." target="_blank" class="border border-[#2A2A2A] text-offwhite font-semibold px-6 py-3 rounded-full text-sm hover:bg-white/5 transition-all">
+        Talk to Us
+      </a>
     </div>
   </section>
 
   <!-- ===== FEATURES ===== -->
-  <section class="features">
-    <div class="container features-grid">
-      <div class="feature">
-        <h3 class="feature-title">Wholesale Rates</h3>
-        <p class="feature-text">Massive bulk discounts passed directly to you.</p>
+  <section class="max-w-6xl mx-auto px-4 py-12 border-y border-[#2A2A2A]">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+      <div>
+        <h3 class="text-lg font-bold text-offwhite">Wholesale Rates</h3>
+        <p class="text-sm text-gray-400 font-light mt-1">Massive bulk discounts passed directly to you.</p>
       </div>
-      <div class="feature">
-        <h3 class="feature-title">10-Second Delivery</h3>
-        <p class="feature-text">Instant automated terminal routing to your line.</p>
+      <div>
+        <h3 class="text-lg font-bold text-offwhite">10-Second Delivery</h3>
+        <p class="text-sm text-gray-400 font-light mt-1">Instant automated terminal routing to your line.</p>
       </div>
-      <div class="feature">
-        <h3 class="feature-title">Zero Network Drama</h3>
-        <p class="feature-text">Constant active uptime across major carriers.</p>
+      <div>
+        <h3 class="text-lg font-bold text-offwhite">Zero Network Drama</h3>
+        <p class="text-sm text-gray-400 font-light mt-1">Constant active uptime across major carriers.</p>
       </div>
     </div>
   </section>
 
   <!-- ===== DATA CARDS ===== -->
-  <section id="data-cards" class="plans">
-    <div class="container">
-      <h2 class="plans-heading">Pick your plan</h2>
-      <p class="plans-sub">All plans delivered instantly via our WhatsApp portal.</p>
+  <section id="data-cards" class="max-w-6xl mx-auto px-4 py-16 md:py-24">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-offwhite tracking-tight">Pick your plan</h2>
+      <p class="text-gray-400 font-light mt-2">All plans delivered instantly via our WhatsApp portal.</p>
+    </div>
 
-      <div class="plans-grid">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <!-- Card 1: MTN 1GB -->
-        <div class="card">
-          <div class="card-top">
-            <span class="card-network">MTN</span>
-            <span class="card-badge">24h</span>
-          </div>
-          <div class="card-size">1 GB</div>
-          <div class="card-price">
-            <span class="card-price-current">₦350</span>
-            <span class="card-price-old">₦500</span>
-          </div>
-          <p class="card-note">Daily high-speed allocation</p>
-          <a href="https://wa.me/2347031763615?text=Hello%20Data%20Charge.%20I%20want%20to%20order%20the%20MTN%201GB%20plan%20for%20%E2%82%A6350.%20Please%20route%20it%20to%20my%20number." target="_blank" class="btn btn-whatsapp">
-            Order via WhatsApp →
-          </a>
+      <!-- CARD 1: MTN 1GB -->
+      <div class="bg-[#141C2C] border border-[#2A2A2A] rounded-2xl p-6 hover:border-electric transition-all flex flex-col">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">MTN</span>
+          <span class="text-[10px] font-bold text-electric bg-electric/10 px-2 py-0.5 rounded-full">24 Hours</span>
         </div>
-
-        <!-- Card 2: MTN 5GB -->
-        <div class="card card-highlight">
-          <div class="card-top">
-            <span class="card-network">MTN</span>
-            <span class="card-badge">2 days</span>
-          </div>
-          <div class="card-size">5 GB</div>
-          <div class="card-price">
-            <span class="card-price-current">₦1,800</span>
-            <span class="card-price-old">₦2,000</span>
-          </div>
-          <p class="card-note">Multi‑day streaming &amp; backup</p>
-          <a href="https://wa.me/2347031763615?text=Hello%20Data%20Charge.%20I%20want%20to%20order%20the%20MTN%205GB%20plan%20for%20%E2%82%A61,800.%20Please%20route%20it%20to%20my%20number." target="_blank" class="btn btn-whatsapp">
-            Order via WhatsApp →
-          </a>
+        <div class="mt-3">
+          <span class="text-3xl font-bold text-offwhite">1 GB</span>
         </div>
-
-        <!-- Card 3: Airtel 10GB -->
-        <div class="card">
-          <div class="card-top">
-            <span class="card-network">Airtel</span>
-            <span class="card-badge">30 days</span>
-          </div>
-          <div class="card-size">10 GB</div>
-          <div class="card-price">
-            <span class="card-price-current">₦3,850</span>
-            <span class="card-price-old">₦4,000</span>
-          </div>
-          <p class="card-note">Full monthly enterprise bundle</p>
-          <a href="https://wa.me/2347031763615?text=Hello%20Data%20Charge.%20I%20want%20to%20order%20the%20Airtel%2010GB%20plan%20for%20%E2%82%A63,850.%20Please%20route%20it%20to%20my%20number." target="_blank" class="btn btn-whatsapp">
-            Order via WhatsApp →
-          </a>
+        <div class="mt-1 flex items-baseline space-x-2">
+          <span class="text-xl font-bold text-offwhite">₦350</span>
+          <span class="text-sm line-through text-gray-500">₦500</span>
         </div>
-
+        <p class="text-xs text-gray-500 mt-1">Daily high-speed allocation</p>
+        <a href="https://wa.me/2347031763615?text=Hello%20Data%20Charge.%20I%20want%20to%20order%20the%20MTN%201GB%20(24hrs)%20plan%20for%20%E2%82%A6350.%20Please%20route%20it%20to%20my%20number." target="_blank" class="mt-6 w-full border border-electric text-electric font-semibold py-2.5 rounded-full text-sm hover:bg-electric hover:text-brand transition-all text-center">
+          Order via WhatsApp →
+        </a>
       </div>
+
+      <!-- CARD 2: MTN 5GB (Best Value) -->
+      <div class="bg-[#141C2C] border-2 border-electric rounded-2xl p-6 hover:shadow-lg hover:shadow-electric/5 transition-all flex flex-col relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-electric text-brand text-[10px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider">Best Value</div>
+        <div class="flex items-center justify-between mt-2">
+          <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">MTN</span>
+          <span class="text-[10px] font-bold text-electric bg-electric/10 px-2 py-0.5 rounded-full">15 Days</span>
+        </div>
+        <div class="mt-3">
+          <span class="text-3xl font-bold text-offwhite">5 GB</span>
+        </div>
+        <div class="mt-1 flex items-baseline space-x-2">
+          <span class="text-xl font-bold text-offwhite">₦1,800</span>
+          <span class="text-sm line-through text-gray-500">₦2,000</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-1">Multi‑day streaming &amp; backup</p>
+        <a href="https://wa.me/2347031763615?text=Hello%20Data%20Charge.%20I%20want%20to%20order%20the%20MTN%205GB%20(15%20Days)%20plan%20for%20%E2%82%A61,800.%20Please%20route%20it%20to%20my%20number." target="_blank" class="mt-6 w-full bg-electric text-brand font-semibold py-2.5 rounded-full text-sm hover:bg-opacity-80 transition-all text-center">
+          Order via WhatsApp →
+        </a>
+      </div>
+
+      <!-- CARD 3: Airtel 10GB -->
+      <div class="bg-[#141C2C] border border-[#2A2A2A] rounded-2xl p-6 hover:border-electric transition-all flex flex-col">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Airtel</span>
+          <span class="text-[10px] font-bold text-electric bg-electric/10 px-2 py-0.5 rounded-full">30 Days</span>
+        </div>
+        <div class="mt-3">
+          <span class="text-3xl font-bold text-offwhite">10 GB</span>
+        </div>
+        <div class="mt-1 flex items-baseline space-x-2">
+          <span class="text-xl font-bold text-offwhite">₦3,850</span>
+          <span class="text-sm line-through text-gray-500">₦4,000</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-1">Full monthly enterprise bundle</p>
+        <a href="https://wa.me/2347031763615?text=Hello%20Data%20Charge.%20I%20want%20to%20order%20the%20Airtel%2010GB%20(30%20Days)%20plan%20for%20%E2%82%A63,850.%20Please%20route%20it%20to%20my%20number." target="_blank" class="mt-6 w-full border border-electric text-electric font-semibold py-2.5 rounded-full text-sm hover:bg-electric hover:text-brand transition-all text-center">
+          Order via WhatsApp →
+        </a>
+      </div>
+
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>Independent high-volume data aggregator. Network trademarks belong to their owners. &copy; <span id="year"></span></p>
+  <footer class="border-t border-[#2A2A2A] py-8 text-center">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="text-xs text-gray-500 font-light">
+        Independent high-volume data aggregator. Network trademarks belong to their owners. &copy; 2026
+      </p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
